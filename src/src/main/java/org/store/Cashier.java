@@ -17,7 +17,7 @@ public class Cashier extends Staff implements CashierService {
     @Override
     public void sellProduct(PurchaseDto purchaseDto, Customers customer) {
         if ((customer.getWallet() >= purchaseDto.getTotalAmountOfAvailableItems()) && this.getPosition()==(Position.JUNIOR_STAFF)) {
-            System.out.println("Hello " + " " + customer.getName() + "," + " your purchase of " + " " + customer.getCustomerCartOfItems()
+            System.out.println("Hello " + " " + customer.getName() + "," + " your purchase of " + " " + purchaseDto.getItemsAvailable()
                     + " " + " has been successful! Please hold on while we print your receipt.");
         } else {
             throw new RuntimeException("Insufficient funds");

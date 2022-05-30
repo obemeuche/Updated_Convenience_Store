@@ -70,9 +70,9 @@ public class Customers implements CustomerService {
                     itemsInStore.get(i).setQuantity(itemsInStore.get(i).getQuantity()-1);
                   }
                 }
-                else {
-                    throw new RuntimeException(itemsNotAvailable + " OUT OF STOCK");
-                }
+//                else {
+//                    throw new RuntimeException(itemsNotAvailable + " OUT OF STOCK");
+//                }
             }
         }
         purchaseDto.setCustomerName(this.name);
