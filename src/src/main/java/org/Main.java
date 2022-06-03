@@ -8,10 +8,7 @@ import org.storeEnum.Position;
 import org.storeEnum.Qualification;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -29,7 +26,7 @@ public class Main {
         System.out.println();
 
         // Instantiating the Product class
-        Products product = new Products("milk", 20.20, 2);
+        Products product = new Products("milk", 20.20, 10);
         Products product1 = new Products("burger", 5.10, 6);
         Products product2 = new Products("bread", 10.00, 4);
 
@@ -62,7 +59,36 @@ public class Main {
         Cashier cashier = new Cashier("Cynthia", "08043456790", Position.JUNIOR_STAFF,
                "iamcynthia@gmail.com", Gender.FEMALE);
 
+        System.out.println();
 
+        CustomerOrder c1 = new CustomerOrder("Ike", "milk",3, 70);
+        CustomerOrder c2 = new CustomerOrder("Uche", "milk",3, 120);
+        CustomerOrder c3 = new CustomerOrder("Jacob", "t-shirt",3, 150);
+        CustomerOrder c4 = new CustomerOrder("Enoch", "burger",3, 80);
+
+
+        LinkedList<CustomerOrder> customerOrderList = store.getCustomerOrderList();
+        customerOrderList.add(c1);
+        customerOrderList.add(c2);
+        customerOrderList.add(c3);
+        customerOrderList.add(c4);
+
+        LinkedList<CustomerOrder> newCustomerOrderList = store.getNewCustomerOrderList();
+
+        Collections.sort(customerOrderList);
+
+        newCustomerOrderList.addAll(customerOrderList);
+
+        System.out.println(newCustomerOrderList);
+
+        System.out.println();
+
+        cashier.sellingViaPriorityQueue(customerOrderList, store);
+
+        System.out.println();
+
+        System.out.println("*******************Items in Store After Purchase***********************");
+        System.out.println(store.getItems());
 
 
     }
