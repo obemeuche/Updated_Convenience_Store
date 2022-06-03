@@ -1,14 +1,11 @@
 package org.fileReader;
 
-import org.store.Cashier;
 import org.store.Products;
-import org.store.Store;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ReadFromFile {
     //static Store store = new Store();
@@ -29,7 +26,7 @@ public class ReadFromFile {
                 for (int j = 0; j < values.length; j++) {
                     //String i = values[j];
                     product.setId(values[0]);
-                    product.setName(values[1]);
+                    product.setProductName(values[1]);
                     product.setCategory(values[2]);
                     product.setPrice(Double.parseDouble(values[3]));
                     product.setQuantity(Integer.parseInt(values[4]));

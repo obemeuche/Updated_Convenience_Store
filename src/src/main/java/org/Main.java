@@ -9,12 +9,15 @@ import org.storeEnum.Qualification;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         // Instantiating the CashierApplicant class
         CashierApplicant cashierApplicant = new CashierApplicant("Cynthia", "0809567452", Gender.FEMALE, 25,
-                Qualification.BSC_ACCOUNTING, 40);
+                Qualification.BSC_ACCOUNTING, 80);
 
         // Instantiating the Manager class
          Manager manager = new Manager("Uchechi", "08067907142", Position.SENIOR_STAFF,
@@ -55,42 +58,11 @@ public class Main {
         System.out.println("Store size " + store.getItems().size());
 
 
-
-         // Instantiating the Customer class
-        Customers customer1 = new Customers("Jacob", "08034567547", Gender.MALE, "iamjacob@gmail.com", 60.00);
-
-        System.out.println();
-        System.out.println("***************Adding to Customer Cart for purchase********************");
-
-//        System.out.println(store.getItems());
-        ArrayList<String> itemsToBuy = customer1.getCustomerCartOfItems();
-//        System.out.println("adding");+
-
-        itemsToBuy.add("danoMilk");
-        itemsToBuy.add("coke");
-        itemsToBuy.add("slippers");
-        itemsToBuy.add("burger");
-        itemsToBuy.add("bread");
-
-        PurchaseDto purchaseDto = customer1.customerCartSummary(itemsToBuy, store);
-        System.out.println(purchaseDto);
-        //System.out.println(purchaseDto.getTotalAmountOfAvailableItems());
-
         // Instantiating the Cashier class
         Cashier cashier = new Cashier("Cynthia", "08043456790", Position.JUNIOR_STAFF,
-                "iamcynthia@gmail.com", Gender.FEMALE);
+               "iamcynthia@gmail.com", Gender.FEMALE);
 
 
-
-        System.out.println();
-        System.out.println("***************Selling Of product********************");
-        //System.out.println(purchaseDto.getTotalAmountOfAvailableItems());
-        cashier.sellProduct(purchaseDto, customer1);
-
-
-        System.out.println();
-        System.out.println("***************Issue Receipt********************");
-        cashier.issueReceipt(purchaseDto, customer1);
 
 
     }

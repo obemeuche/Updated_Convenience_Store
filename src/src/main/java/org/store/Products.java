@@ -4,7 +4,7 @@ public class Products {
 
     private String id;
 
-    private String name;
+    private String productName;
     private String category;
 
     private Double price;
@@ -16,19 +16,19 @@ public class Products {
 
     }
 
-    public Products(String name, double price, int quantity) {
-        this.name = name;
+    public Products(String productName, double price, int quantity) {
+        this.productName = productName;
         this.price = price;
         this.quantity = quantity;
     }
 
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public void setPrice(Double price) {
@@ -68,7 +68,7 @@ public class Products {
         return "Products{" +
                 "id='" + id + '\'' +
                 ", category='" + category + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + productName + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
                 '}';

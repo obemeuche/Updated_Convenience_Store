@@ -20,6 +20,8 @@ public class Customers implements CustomerService {
 
     private double wallet;
 
+    public Customers() {
+    }
 
     public Customers(String name, String phoneNumber, Gender gender, String emailAddress, double wallet) {
         this.name = name;
@@ -60,12 +62,12 @@ public class Customers implements CustomerService {
         for(int i=0; i<itemsInStore.size(); i++){
             for(int j=0; j<customerList.size(); j++) {
 
-                if(Objects.equals(itemsInStore.get(i).getName(), customerList.get(j))){
+                if(Objects.equals(itemsInStore.get(i).getProductName(), customerList.get(j))){
                     //System.out.println("cus list " + customerList.get(j));
                   if(itemsInStore.get(i).getQuantity()<=0) {
                     itemsNotAvailable.add(customerList.get(j));
                   } else {
-                    itemsToBuy.add(itemsInStore.get(i).getName());
+                    itemsToBuy.add(itemsInStore.get(i).getProductName());
                     totalOfAvailableItems+=itemsInStore.get(i).getPrice();
                     itemsInStore.get(i).setQuantity(itemsInStore.get(i).getQuantity()-1);
                   }
