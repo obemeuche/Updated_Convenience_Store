@@ -41,12 +41,20 @@ public class CustomerOrder implements Comparable <CustomerOrder>{
 
     @Override
     public int compareTo(CustomerOrder customerOrder) {
-        if (customerOrder.quantity > this.quantity) {
+        if(customerOrder.item != this.item)
+        {
             return 1;
-        } else if (customerOrder.quantity == this.quantity) {
-            return 1;
-        } else {
-            return -1;
+        }
+        else  {
+            if (customerOrder.quantity > this.quantity) {
+                return 1;
+            }
+            else if (customerOrder.quantity == this.quantity) {
+                return 1;
+            }
+            else{
+                return -1;
+            }
         }
     }
 

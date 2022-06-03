@@ -63,7 +63,7 @@ public class Main {
 
         CustomerOrder c1 = new CustomerOrder("Ike", "milk",3, 70);
         CustomerOrder c2 = new CustomerOrder("Uche", "milk",3, 120);
-        CustomerOrder c3 = new CustomerOrder("Jacob", "t-shirt",3, 150);
+        CustomerOrder c3 = new CustomerOrder("Jacob", "t-shirt",3, 170);
         CustomerOrder c4 = new CustomerOrder("Enoch", "burger",3, 80);
 
 
